@@ -1,22 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
+use App\Http\Controllers\ContactController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/contact', function () {
-    return view("contact");
-});
-
-Route::post('/contact', function (Request $request) {
-    $validated = $request->validate([
-        "name" => "required",
-        "email" => "required|email",
-        "message" => "required|min:8|max:1000"
-    ]);
-
-    return redirect("/");
-});
+Route::get('/contact', [ContactController::class, "showForm"]);
+Route::post('/contact', [ContactController::class, "storeMessage"]);
+Route::get('/messages', [ContactController::class, "showMessages"]);
