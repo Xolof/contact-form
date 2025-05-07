@@ -15,18 +15,18 @@
           <div class="hidden md:flex items-center">
             <nav class="ml-auto">
               <ul class="list-reset items-center hidden md:flex">
-                <li class="mr-3"><a class="inline-block py-2 px-4 text-white no-underline" href="{{ route('messages') }}">Messages</a></li>
-                <li class="mr-3"><a class="inline-block py-2 px-4 text-white no-underline" href="{{ route('about') }}">About</a></li>
-                <li class="mr-3"><a class="inline-block py-2 px-4 text-white no-underline" href="{{ route('contact.show') }}">Contact</a></li>
+                <li class="mr-3"><a class="inline-block py-2 px-4 border-2 border-gray-900 rounded hover:border-gray-600 text-white no-underline transition-colors" href="{{ route('messages') }}">Messages</a></li>
+                <li class="mr-3"><a class="inline-block py-2 px-4 border-2 border-gray-900 rounded hover:border-gray-600 text-white no-underline transition-colors" href="{{ route('about') }}">About</a></li>
+                <li class="mr-3"><a class="inline-block py-2 px-4 border-2 border-gray-900 rounded hover:border-gray-600 text-white no-underline transition-colors" href="{{ route('contact.show') }}">Contact</a></li>
                 @auth
-                  <li class="mr-3"><a class="inline-block py-2 px-4 text-white no-underline" href="{{ route('dashboard') }}">Dashboard</a></li>
+                  <li class="mr-3"><a class="inline-block py-2 px-4 border-2 border-gray-900 rounded hover:border-gray-600 text-white no-underline transition-colors" href="{{ route('dashboard') }}">Dashboard</a></li>
                 @else
-                  <li class="mr-3"><a class="inline-block py-2 px-4 text-white no-underline" href="{{ route('login') }}">Login</a></li>
+                  <li class="mr-3"><a class="inline-block py-2 px-4 border-2 border-gray-900 rounded hover:border-gray-600 text-white no-underline transition-colors" href="{{ route('login') }}">Login</a></li>
 
                   @if (Route::has('register'))
                       <a
                           href="{{ route('register') }}"
-                          class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal">
+                          class="inline-block py-2 px-4 border-2 border-gray-900 rounded hover:border-gray-600 text-white no-underline transition-colors">
                           Register
                       </a>
                   @endif
