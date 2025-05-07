@@ -15,7 +15,9 @@
           <div class="hidden md:flex items-center">
             <nav class="ml-auto">
               <ul class="list-reset items-center hidden md:flex">
-                <li class="mr-3"><a class="inline-block py-2 px-4 border-2 border-gray-900 rounded hover:border-gray-600 text-white no-underline transition-colors" href="{{ route('messages') }}">Messages</a></li>
+                @auth
+                  <li class="mr-3"><a class="inline-block py-2 px-4 border-2 border-gray-900 rounded hover:border-gray-600 text-white no-underline transition-colors" href="{{ route('messages') }}">Messages</a></li>
+                @endauth
                 <li class="mr-3"><a class="inline-block py-2 px-4 border-2 border-gray-900 rounded hover:border-gray-600 text-white no-underline transition-colors" href="{{ route('about') }}">About</a></li>
                 <li class="mr-3"><a class="inline-block py-2 px-4 border-2 border-gray-900 rounded hover:border-gray-600 text-white no-underline transition-colors" href="{{ route('contact.show') }}">Contact</a></li>
                 @auth
