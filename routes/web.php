@@ -10,3 +10,8 @@ Route::get('/', function () {
 Route::get('/contact', [ContactController::class, "showForm"]);
 Route::post('/contact', [ContactController::class, "storeMessage"]);
 Route::get('/messages', [ContactController::class, "showMessages"]);
+
+Route::get('/about', function () {
+    return view('about');
+});
+
