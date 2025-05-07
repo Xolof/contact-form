@@ -15,13 +15,13 @@
           <div class="hidden md:flex items-center">
             <nav class="ml-auto">
               <ul class="list-reset items-center hidden md:flex">
-                <li class="mr-3"><a class="inline-block py-2 px-4 text-white no-underline" href="/messages">Messages</a></li>
-                <li class="mr-3"><a class="inline-block py-2 px-4 text-white no-underline" href="/about">About</a></li>
-                <li class="mr-3"><a class="inline-block py-2 px-4 text-white no-underline" href="/contact">Contact</a></li>
+                <li class="mr-3"><a class="inline-block py-2 px-4 text-white no-underline" href="{{ route('messages') }}">Messages</a></li>
+                <li class="mr-3"><a class="inline-block py-2 px-4 text-white no-underline" href="{{ route('about') }}">About</a></li>
+                <li class="mr-3"><a class="inline-block py-2 px-4 text-white no-underline" href="{{ route('contact.show') }}">Contact</a></li>
                 @auth
-                  <li class="mr-3"><a class="inline-block py-2 px-4 text-white no-underline" href="/dashboard">Dashboard</a></li>
+                  <li class="mr-3"><a class="inline-block py-2 px-4 text-white no-underline" href="{{ route('dashboard') }}">Dashboard</a></li>
                 @else
-                  <li class="mr-3"><a class="inline-block py-2 px-4 text-white no-underline" href="/login">Login</a></li>
+                  <li class="mr-3"><a class="inline-block py-2 px-4 text-white no-underline" href="{{ route('login') }}">Login</a></li>
 
                   @if (Route::has('register'))
                       <a

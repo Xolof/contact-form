@@ -18,12 +18,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/contact', [ContactController::class, "showForm"]);
-Route::post('/contact', [ContactController::class, "storeMessage"]);
-Route::get('/messages', [ContactController::class, "showMessages"]);
+Route::get('/contact', [ContactController::class, "showForm"])->name('contact.show');
+Route::post('/contact', [ContactController::class, "storeMessage"])->name('contact.add');
+Route::get('/messages', [ContactController::class, "showMessages"])->name('messages');
 
 Route::get('/about', function () {
     return view('about');
-});
+})->name('about');
 
 require __DIR__.'/auth.php';
