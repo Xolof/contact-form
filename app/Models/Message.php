@@ -12,8 +12,8 @@ class Message extends Model
      * @var list<string>
      */
     protected $fillable = [
-        "sender_name",
-        "sender_email",
-        "message"
+        'sender_name',
+        'sender_email',
+        'message',
     ];
 }

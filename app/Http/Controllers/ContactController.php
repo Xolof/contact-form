@@ -2,22 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Message;
 use App\Http\Requests\StoreMessageRequest;
+use App\Models\Message;
+use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
-    public function showMessages() {
-        return view("messages", ["messages" => Message::all()]);
+    public function showMessages()
+    {
+        return view('messages', ['messages' => Message::all()]);
     }
 
-    public function showForm() {
-        return view("contact");
+    public function showForm()
+    {
+        return view('contact');
     }
 
-    public function storeMessage(StoreMessageRequest $request) {
-        
+    public function storeMessage(StoreMessageRequest $request)
+    {
+
         // using class Request
         // $validated = $request->validate([
         //     "name" => "required",
@@ -31,11 +34,11 @@ class ContactController extends Controller
         // ]);
 
         Message::create([
-            "sender_name" => $request->input("name"),
-            "sender_email" => $request->input("email"),
-            "message" => $request->input("message")
+            'sender_name' => $request->input('name'),
+            'sender_email' => $request->input('email'),
+            'message' => $request->input('message'),
         ]);
-    
-        return redirect("/messages");
+
+        return redirect('/messages');
     }
 }
