@@ -22,7 +22,17 @@
                 <li class="mr-3"><a class="inline-block py-2 px-4 border-2 border-gray-900 rounded hover:border-gray-600 text-white no-underline transition-colors" href="{{ route('contact.show') }}">Contact</a></li>
                 @auth
                   <li class="mr-3"><a class="inline-block py-2 px-4 border-2 border-gray-900 rounded hover:border-gray-600 text-white no-underline transition-colors" href="{{ route('dashboard') }}">Dashboard</a></li>
-                @else
+                  <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <li class="mr-3">
+                      <a class="inline-block py-2 px-4 border-2 border-gray-900 rounded hover:border-gray-600 text-white no-underline transition-colors" :href="route('logout')"
+                        onclick="event.preventDefault(); this.closest('form').submit();"
+                      >
+                        {{ __('Log Out') }}
+                      </a>
+                    </li>
+                </form>
+                  @else
                   <li class="mr-3"><a class="inline-block py-2 px-4 border-2 border-gray-900 rounded hover:border-gray-600 text-white no-underline transition-colors" href="{{ route('login') }}">Login</a></li>
 
                   @if (Route::has('register'))
