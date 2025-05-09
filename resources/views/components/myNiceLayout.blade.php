@@ -77,7 +77,7 @@
         </div>
 
         <!-- Desktop Menu -->
-        <div class="w-full mx-auto px-4 py-4 flex justify-between items-center">
+        <div class="w-full mx-auto px-4 py-4 flex justify-between items-center max-w-7xl sm:px-6 lg:px-8">
         <div class="text-white text-2xl font-bold pr-8">
                 <a href="/">Message Website</a>
             </div>
