@@ -21,12 +21,16 @@
             <!-- Page Heading -->
             @isset($header)
                 <header class="bg-white dark:bg-gray-800 shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                    <div class="mx-auto py-6 px-4 sm:px-6 lg:px-8">
                         {{ $header }}
                     </div>
+                    @if (session('flashMessage'))
+                        <div class=" max-w-7xl m-2 p-2 border-2 border-blue-500 rounded text-center mx-auto">
+                            <p>{{ session('flashMessage') }}</p>
+                        </div>
+                    @endif
                 </header>
             @endisset
-
             <!-- Page Content -->
             <main>
                 {{ $slot }}

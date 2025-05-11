@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Message;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -9,8 +11,14 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $messages = Message::all();
+
+    return view('dashboard', ['messages' => $messages]);
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::post('/delete-message', [MessageController::class, 'destroy'])->name('delete-message');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
