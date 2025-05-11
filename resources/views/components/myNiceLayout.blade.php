@@ -52,9 +52,7 @@
                 </button>
             </div>
             <ul class="flex flex-col p-4 space-y-2">
-                @auth
-                    <li><a class="text-white hover:text-gray-300" href="{{ route('messages') }}">Messages</a></li>
-                @endauth
+                <li><a class="text-white hover:text-gray-300" href="{{ route('messages') }}">Messages</a></li>
                 <li><a class="text-white hover:text-gray-300" href="{{ route('about') }}">About</a></li>
                 <li><a class="text-white hover:text-gray-300" href="{{ route('contact.show') }}">Contact</a></li>
                 @auth
@@ -82,9 +80,7 @@
                 <a href="/">Message Website</a>
             </div>
             <ul class="hidden md:flex space-x-4">
-                @auth
-                    <li><a class="text-white hover:text-gray-300" href="{{ route('messages') }}">Messages</a></li>
-                @endauth
+                <li><a class="text-white hover:text-gray-300" href="{{ route('messages') }}">Messages</a></li>
                 <li><a class="text-white hover:text-gray-300" href="{{ route('about') }}">About</a></li>
                 <li><a class="text-white hover:text-gray-300" href="{{ route('contact.show') }}">Contact</a></li>
                 @auth
