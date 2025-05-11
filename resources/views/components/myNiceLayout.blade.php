@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laracasts: {{ $title }}</title>
+    <title>Guestbook | {{ $title }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
@@ -41,7 +41,7 @@
         >
             <div class="flex justify-between p-4">
                 <div class="text-white text-xl font-bold">
-                    <a href="/">Message Website</a>
+                    <a href="/">Guestbook</a>
                 </div>
                 <button
                     @click="mobileMenuIsOpen = false"
@@ -54,7 +54,7 @@
             <ul class="flex flex-col p-4 space-y-2">
                 <li><a class="text-white hover:text-gray-300" href="{{ route('messages') }}">Messages</a></li>
                 <li><a class="text-white hover:text-gray-300" href="{{ route('about') }}">About</a></li>
-                <li><a class="text-white hover:text-gray-300" href="{{ route('contact.show') }}">Contact</a></li>
+                <li><a class="text-white hover:text-gray-300" href="{{ route('contact.show') }}">Write a message</a></li>
                 @auth
                     <li><a class="text-white hover:text-gray-300" href="{{ route('dashboard') }}">Dashboard</a></li>
                     <li>
@@ -77,12 +77,12 @@
         <!-- Desktop Menu -->
         <div class="w-full mx-auto px-4 py-4 flex justify-between items-center max-w-7xl sm:px-6 lg:px-8">
         <div class="text-white text-2xl font-bold pr-8">
-                <a href="/">Message Website</a>
+                <a href="/">Guestbook</a>
             </div>
             <ul class="hidden md:flex space-x-4">
                 <li><a class="text-white hover:text-gray-300" href="{{ route('messages') }}">Messages</a></li>
                 <li><a class="text-white hover:text-gray-300" href="{{ route('about') }}">About</a></li>
-                <li><a class="text-white hover:text-gray-300" href="{{ route('contact.show') }}">Contact</a></li>
+                <li><a class="text-white hover:text-gray-300" href="{{ route('contact.show') }}">Write a message</a></li>
                 @auth
                     <li><a class="text-white hover:text-gray-300" href="{{ route('dashboard') }}">Dashboard</a></li>
                     <li>

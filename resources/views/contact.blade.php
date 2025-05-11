@@ -1,8 +1,8 @@
 <x-myNiceLayout>
 
-  <x-slot:title>Contact</x-slot:title>
+  <x-slot:title>Write a message</x-slot:title>
   
-  <form class="mt-8 space-y-6" action="/contact" method="POST" novalidate>
+  <form class="mt-8 space-y-6" action="/add-message" method="POST" novalidate>
     @csrf
     @if($errors->any())
       <div class="m-2 p-2 border-2 border-rose-500 rounded">
@@ -32,7 +32,7 @@
 
     <div>
       <button type="submit" class="justify-center w-full inline-flex items-center px-4 py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-800 uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
-        Send Message
+        Send
       </button>
     </div>
   </form>

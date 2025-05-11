@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ContactController;
+use App\Http\Controllers\GuestbookController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Message;
@@ -26,9 +26,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/messages', [ContactController::class, 'showMessages'])->name('messages');
-Route::get('/contact', [ContactController::class, 'showForm'])->name('contact.show');
-Route::post('/contact', [ContactController::class, 'storeMessage'])->name('contact.add');
+Route::get('/messages', [GuestbookController::class, 'showMessages'])->name('messages');
+Route::get('/add-message', [GuestbookController::class, 'showForm'])->name('contact.show');
+Route::post('/add-message', [GuestbookController::class, 'storeMessage'])->name('contact.add');
 
 Route::get('/about', function () {
     return view('about');

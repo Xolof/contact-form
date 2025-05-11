@@ -6,7 +6,7 @@ use App\Http\Requests\StoreMessageRequest;
 use App\Models\Message;
 use Illuminate\Http\Request;
 
-class ContactController extends Controller
+class GuestbookController extends Controller
 {
     public function showMessages()
     {
