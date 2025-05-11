@@ -25,7 +25,7 @@
                         {{ $header }}
                     </div>
                     @if (session('flashMessage'))
-                        <div class=" max-w-7xl m-2 p-2 border-2 border-blue-500 rounded text-center mx-auto">
+                        <div class="max-w-md m-2 p-2 border-2 border-blue-500 rounded text-center mx-auto">
                             <p>{{ session('flashMessage') }}</p>
                         </div>
                     @endif
