@@ -11,7 +11,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    $messages = Message::all();
+    $messages = Message::orderBy('created_at', 'desc')->get();
 
     return view('dashboard', ['messages' => $messages]);
 })->middleware(['auth', 'verified'])->name('dashboard');
