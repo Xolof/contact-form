@@ -1,0 +1,70 @@
+name: Tests
+
+on:
+  push:
+    branches: [ "develop" ]
+  pull_request:
+    branches: [ "master" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: 8.4.6
+
+    - name: Validate composer.json and composer.lock
+      run: composer validate --strict
+
+    - name: Cache Composer packages
+      id: composer-cache
+      uses: actions/cache@v3
+      with:
+        path: vendor
+        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-php-
+
+    - name: Install Composer dependencies
+      run: composer install --prefer-dist --no-progress
+
+    - name: Install NPM dependencies
+      run: npm install
+
+    - name: Build the Javascript with NPM
+      run: npm run build
+
+    - name: Prepare environment file
+      run: |
+        printf %s "${{ secrets.ENV_FILE }}" > .env
+
+    - name: Run Pint
+      run: ./vendor/bin/pint
+
+    - name: Run Rector
+      run: ./vendor/bin/rector app routes tests
+
+    - name: Run PhpStan
+      run: ./vendor/bin/phpstan analyse app routes --memory-limit=1G
+
+    - name: Clear config
+      run: php artisan config:clear --ansi 
+
+    - name: Run Pest tests
+      run: ./vendor/bin/pest --coverage --min=70
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: app
+        path: |
+          ./*
