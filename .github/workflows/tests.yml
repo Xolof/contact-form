@@ -108,6 +108,6 @@ jobs:
             find ${{ secrets.DEPLOY_PATH }}  -type f -exec chmod 644 {} \;
             chmod -R 775 ${{ secrets.DEPLOY_PATH }}storage
             chmod -R 775 ${{ secrets.DEPLOY_PATH }}bootstrap/cache
-            chmod 600 .env
+            chmod 600 ${{ secrets.DEPLOY_PATH }}.env
             cd ${{ secrets.DEPLOY_PATH }} && php artisan migrate:fresh --force
             cd ${{ secrets.DEPLOY_PATH }} && php artisan db:seed --force
