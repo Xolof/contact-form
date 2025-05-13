@@ -79,7 +79,7 @@
         <div class="text-white text-2xl font-bold pr-8">
                 <a href="/">Guestbook</a>
             </div>
-            <ul class="hidden md:flex space-x-4">
+            <ul class="hidden md:flex space-x-7">
                 <li><a class="text-white hover:text-gray-300" href="{{ route('messages') }}">Messages</a></li>
                 <li><a class="text-white hover:text-gray-300" href="{{ route('contact.show') }}">Write a message</a></li>
                 <li><a class="text-white hover:text-gray-300" href="{{ route('about') }}">About</a></li>
