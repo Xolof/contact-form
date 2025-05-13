@@ -8,9 +8,15 @@ use Illuminate\Http\Request;
 
 class GuestbookController extends Controller
 {
-    public function showMessages()
+    public function showMessages(Request $request)
     {
-        $messages = Message::orderBy('created_at', 'desc')->where('published', true)->get();
+        $messages = Message::orderBy('created_at', 'desc')->where('published', true)->paginate(3);
+
+        $currentPage = $request->input('page', 1);
+
+        if ($currentPage > $messages->lastPage() && $currentPage > 1) {
+            return redirect()->route('messages', ['page' => $messages->lastPage()]);
+        }
 
         return view('messages', ['messages' => $messages]);
     }

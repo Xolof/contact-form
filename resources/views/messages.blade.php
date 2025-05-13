@@ -11,4 +11,8 @@
       <p>{{ $message["message"] }}</p>
     </div>
   @endforeach
+
+  {{ $messages->links() }}
+
+
 </x-myNiceLayout>
