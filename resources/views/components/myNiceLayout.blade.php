@@ -53,8 +53,8 @@
             </div>
             <ul class="flex flex-col p-4 space-y-2">
                 <li><a class="text-white hover:text-gray-300" href="{{ route('messages') }}">Messages</a></li>
-                <li><a class="text-white hover:text-gray-300" href="{{ route('about') }}">About</a></li>
                 <li><a class="text-white hover:text-gray-300" href="{{ route('contact.show') }}">Write a message</a></li>
+                <li><a class="text-white hover:text-gray-300" href="{{ route('about') }}">About</a></li>
                 @auth
                     <li><a class="text-white hover:text-gray-300" href="{{ route('dashboard') }}">Dashboard</a></li>
                     <li>
@@ -81,8 +81,8 @@
             </div>
             <ul class="hidden md:flex space-x-4">
                 <li><a class="text-white hover:text-gray-300" href="{{ route('messages') }}">Messages</a></li>
-                <li><a class="text-white hover:text-gray-300" href="{{ route('about') }}">About</a></li>
                 <li><a class="text-white hover:text-gray-300" href="{{ route('contact.show') }}">Write a message</a></li>
+                <li><a class="text-white hover:text-gray-300" href="{{ route('about') }}">About</a></li>
                 @auth
                     <li><a class="text-white hover:text-gray-300" href="{{ route('dashboard') }}">Dashboard</a></li>
                     <li>
