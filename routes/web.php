@@ -18,6 +18,7 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
     Route::post('/delete-message', [MessageController::class, 'destroy'])->name('delete-message');
+    Route::post('/update-message', [MessageController::class, 'update'])->name('update-message');
 });
 
 Route::middleware('auth')->group(function () {
