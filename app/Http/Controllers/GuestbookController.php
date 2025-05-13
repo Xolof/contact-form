@@ -10,7 +10,13 @@ class GuestbookController extends Controller
 {
     public function showMessages(Request $request)
     {
-        $messages = Message::orderBy('created_at', 'desc')->where('published', true)->paginate(3);
+        $request->validate([
+            'order' => 'nullable|in:asc,desc',
+        ]);
+
+        $order = $request->input('order') ?? 'desc';
+
+        $messages = Message::orderBy('created_at', $order)->where('published', true)->paginate(3);
 
         $currentPage = $request->input('page', 1);
 
