@@ -41,6 +41,8 @@ class GuestbookController extends Controller
             'message' => $request->input('message'),
         ]);
 
+        $request->session()->flash('flashMessage', 'Your message has been received and is awaiting moderation.');
+
         return redirect('/messages');
     }
 }
