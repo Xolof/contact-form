@@ -10,7 +10,7 @@ class GuestbookController extends Controller
 {
     public function showMessages()
     {
-        $messages = Message::orderBy('created_at', 'desc')->get();
+        $messages = Message::orderBy('created_at', 'desc')->where('published', true)->get();
 
         return view('messages', ['messages' => $messages]);
     }

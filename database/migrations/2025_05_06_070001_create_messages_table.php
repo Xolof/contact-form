@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('sender_name');
             $table->string('sender_email');
             $table->string('message');
+            $table->boolean('published')->default(false);
             $table->timestamps();
         });
     }
