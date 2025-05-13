@@ -20,6 +20,9 @@
                             </ul>
                         </div>
                     @endif
+                    @if(count($messages) === 0)
+                        <p class="m-2 p-2 rounded text-gray-200 text-center">There are no messages.</p>
+                    @endif
                     @foreach($messages as $message)
                         <div class="py-4">
                             <p>{{ $message["created_at"] }}</p>
