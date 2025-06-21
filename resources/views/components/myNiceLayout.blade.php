@@ -106,7 +106,7 @@
     <div class="min-h-screen flex justify-center bg-gray-800 py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-2xl w-full space-y-8">
             @if (session('flashMessage'))
-                <div class="max-w-md m-2 p-2 border-2 border-blue-500 rounded text-center mx-auto dark:text-gray-100">
+                <div class="max-w-md m-2 p-2 border-2 border-blue-500 rounded text-center mx-auto text-gray-100">
                     <p>{{ session('flashMessage') }}</p>
                 </div>
             @endif
